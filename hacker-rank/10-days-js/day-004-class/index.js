@@ -4,17 +4,15 @@
  * 2. A 'perimeter' method that returns the sum of the Polygon's side lengths.
  */
 
-class Polygon{
-    constructor(arr){
-        this.sides = arr;
-    }
-    
-    perimeter(){
-        
-        return this.sides.reduce((acc,side)=>side+acc,0)
-    }
-}
+class Polygon {
+  constructor(arr) {
+    this.sides = arr;
+  }
 
+  perimeter() {
+    return this.sides.reduce((acc, side) => side + acc, 0);
+  }
+}
 
 const rectangle = new Polygon([10, 20, 10, 20]);
 const square = new Polygon([10, 10, 10, 10]);
