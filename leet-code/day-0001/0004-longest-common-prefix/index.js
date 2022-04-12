@@ -12,6 +12,5 @@ var longestCommonPrefix = function (strs) {
       if (prefix.length === 0) return "";
     }
   }
-
   return prefix;
 };
