@@ -1,5 +1,6 @@
 process.stdin.resume();
 process.stdin.setEncoding("ascii");
+
 process.stdin.on("data", function (input) {
   for (i = 1; i <= 100; i++) {
     i % 15 === 0
