@@ -23,29 +23,30 @@ function readLine() {
 }
 
 /*
- * Complete the 'diagonalDifference' function below.
+ * Complete the 'lonelyinteger' function below.
  *
  * The function is expected to return an INTEGER.
- * The function accepts 2D_INTEGER_ARRAY arr as parameter.
+ * The function accepts INTEGER_ARRAY a as parameter.
  */
 
-function diagonalDifference(arr) {
+function lonelyinteger(a) {
   // Write your code here
+  const obj = {};
 
-  let left = 0,
-    right = 0;
-  const length = arr.length;
-  for (let i = 0; i < length; i++) {
-    left = left + arr[i][i];
+  for (var item of a) {
+    if (obj.hasOwnProperty(item)) {
+      obj[item]++;
+    } else {
+      obj[item] = 1;
+    }
   }
+  console.log(obj);
 
-  for (let i = 0; i < length; i++) {
-    let j = length - 1 - i;
-    console.log(arr[i][j]);
-    right = right + arr[i][j];
+  for (var prop in obj) {
+    if (obj[prop] === 1) {
+      return prop;
+    }
   }
-
-  return Math.abs(right - left);
 }
 
 function main() {
@@ -53,16 +54,12 @@ function main() {
 
   const n = parseInt(readLine().trim(), 10);
 
-  let arr = Array(n);
+  const a = readLine()
+    .replace(/\s+$/g, "")
+    .split(" ")
+    .map((aTemp) => parseInt(aTemp, 10));
 
-  for (let i = 0; i < n; i++) {
-    arr[i] = readLine()
-      .replace(/\s+$/g, "")
-      .split(" ")
-      .map((arrTemp) => parseInt(arrTemp, 10));
-  }
-
-  const result = diagonalDifference(arr);
+  const result = lonelyinteger(a);
 
   ws.write(result + "\n");
 
