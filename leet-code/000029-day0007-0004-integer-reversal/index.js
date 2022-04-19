@@ -1,8 +1,13 @@
 function processData(input) {
   //Enter your code here
 
-  let text = input.split("").reverse().join("") === input ? "YES" : "NO";
-  console.log(text);
+  +input > 0
+    ? console.log(input.split("").reverse().join(""))
+    : console.log(
+        "-" + input.split("").slice(1, input.length).reverse().join("")
+      );
+
+  //else console.log(+(+))
 }
 
 process.stdin.resume();
